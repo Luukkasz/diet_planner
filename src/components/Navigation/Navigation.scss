@@ -1,0 +1,17 @@
+.page__header {
+  height: 10vh;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+
+.header__list {
+  display: flex;
+  gap: 50px;
+}
+
+.header__link {
+  &.active {
+    color: black;
+  }
+}
