@@ -1,3 +1,4 @@
+// import React, {useState, useEffect} from "react";
 import {Routes, Route} from "react-router-dom";
 import './App.scss';
 import Navigation from "../components/Navigation/Navigation";
@@ -6,6 +7,8 @@ import AddProduct from "./AddProduct";
 import MyPlans from "./MyPlans";
 
 function App() {
+
+
     return (
         <>
             <Navigation/>
