@@ -1,12 +1,12 @@
 import React from 'react';
 import './MainPage.scss';
-import ProductList from "../components/ProductList/ProductList";
 import AddSinglePlan from "../components/AddSinglePlan/AddSinglePlan";
+import ProductList from "../components/ProductList/ProductList";
 
-function MainPage(props) {
+function MainPage({productList}) {
     return (
         <div className="mainPage__container">
-            <ProductList />
+            <ProductList productList={productList}/>
             <AddSinglePlan />
         </div>
     );

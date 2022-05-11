@@ -1,0 +1,54 @@
+import React, {useState} from 'react';
+import './SingleProduct.scss';
+
+function SingleProduct({product, idx}) {
+    const [meal, setMeal] = useState('')
+    const [weight, setWeight] = useState('');
+
+    const handleMealChange = (e) => setMeal(e.target.value);
+    const handleWeightChange = (e) => setWeight(e.target.value);
+    const handleAddMeal = (e) => {
+        e.preventDefault();
+        if(!weight) return;
+        console.log({
+            ...product,
+            meal: meal,
+            proteins: Number(product.proteins) * Number(weight) / 100,
+            carbs: Number(product.carbs) * Number(weight) / 100,
+            fats: Number(product.fats) * Number(weight) / 100,
+            kcals: Number(product.kcals) * Number(weight) / 100,
+            id: Math.random() * 10000,
+        });
+    };
+
+    return (
+        <li className="productList__item">
+            <h3 className="productList__item-name">{idx + 1}. {product.name}, in 100 grams: </h3>
+            <p className="productList__item-description">Proteins: {product.proteins}g</p>
+            <p className="productList__item-description">Carbs: {product.carbs}g</p>
+            <p className="productList__item-description">Fats: {product.fats}g</p>
+            <p className="productList__item-description">{product.kcals} kcals</p>
+
+            <form onSubmit={handleAddMeal}>
+                <input
+                    type="number"
+                    placeholder="Weigth of grams"
+                    value={weight}
+                    onChange={handleWeightChange}
+
+                />
+                <select
+                    value={meal}
+                    onChange={handleMealChange}>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snack</option>
+                </select>
+                <button>Add to plan</button>
+            </form>
+        </li>
+    );
+}
+
+export default SingleProduct;

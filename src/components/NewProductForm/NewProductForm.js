@@ -1,15 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import './NewProductForm.scss';
 
-function NewProductForm(props) {
-    const [newProduct, setNewProduct] = useState({
-        name: '',
-        proteins: '',
-        carbs: '',
-        fats: '',
-    });
+function NewProductForm({newProduct, setNewProduct, setProductList, initialNewProduct}) {
 
-    const [productList, setProductList] = useState([]);
 
     const handleChange = (e) => {
         setNewProduct(prevState => {
@@ -26,17 +19,12 @@ function NewProductForm(props) {
             return [
                 ...prevState,
                 {...newProduct,
-                id: Math.random()*1000,
-                kcals:(Number(newProduct.proteins) * 4) + (Number(newProduct.carbs) * 4) + (Number(newProduct.fats) * 9) }
+                    id: Math.random()*1000,
+                    kcals:(Number(newProduct.proteins) * 4) + (Number(newProduct.carbs) * 4) + (Number(newProduct.fats) * 9) }
             ]
         });
 
-        setNewProduct({
-            name: '',
-            proteins: '',
-            carbs: '',
-            fats: '',
-        })
+        setNewProduct(initialNewProduct);
     }
 
     const kcalCounter = (newProduct) => {

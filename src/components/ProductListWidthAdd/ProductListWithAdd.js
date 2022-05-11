@@ -1,8 +1,7 @@
 import React from 'react';
-import './ProductList.scss';
 import SingleProduct from "../SingleProduct/SingleProduct";
 
-function ProductList({productList}) {
+function ProductListWithAdd({productList}) {
     return (
         <div className="productList__wrapper">
             <h2 className="productList__title">Product List</h2>
@@ -31,4 +30,4 @@ function ProductList({productList}) {
     );
 }
 
-export default ProductList;
+export default ProductListWithAdd;

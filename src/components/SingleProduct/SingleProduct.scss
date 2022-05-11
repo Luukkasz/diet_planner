@@ -1,0 +1,11 @@
+.productList__item{
+  border: 1px solid black;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 14px;
+
+  &-name {
+    margin-bottom: 10px;
+  }
+}
+

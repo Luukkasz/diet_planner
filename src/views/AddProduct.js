@@ -3,11 +3,19 @@ import './AddProduct.scss';
 import NewProductForm from "../components/NewProductForm/NewProductForm";
 import ProductList from "../components/ProductList/ProductList";
 
-function AddProduct(props) {
+function AddProduct({newProduct, setNewProduct, productList, setProductList, initialNewProduct}) {
     return (
         <div className="addProduct__container">
-            <NewProductForm />
-            <ProductList />
+            <NewProductForm newProduct={newProduct}
+                            setNewProduct={setNewProduct}
+                            productList={productList}
+                            setProductList={setProductList}
+                            initialNewProduct={initialNewProduct}  />
+
+
+
+
+            <ProductList productList={productList} />
         </div>
 
     );

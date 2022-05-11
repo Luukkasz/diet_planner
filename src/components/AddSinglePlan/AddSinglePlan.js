@@ -3,7 +3,17 @@ import './AddSinglePlan.scss';
 
 function AddSinglePlan(props) {
     return (
-        <div>Add Single Plan</div>
+        <div className="productList__wrapper">
+            <h2 className="productList__title">Plan name</h2>
+
+
+            <ul className="productList__list">
+
+
+            </ul>
+
+
+        </div>
     );
 }
 
