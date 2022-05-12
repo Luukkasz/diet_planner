@@ -1,8 +1,11 @@
-## Available Scripts
+# Diet Planner
+This app will help you make individual nutritional plans. <br>
+Healthy body === healthy mind :-)
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+#### To start a project - download it and type in the terminal:
+`npm install` <br>
+`npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+And then open [http://localhost:3000](http://localhost:3000) to view it in your browser.
