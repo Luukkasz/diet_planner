@@ -15,7 +15,9 @@ function AddProduct({newProduct, setNewProduct, productList, setProductList, ini
 
 
 
-            <ProductList productList={productList} />
+            <ProductList
+                productList={productList}
+            />
         </div>
 
     );

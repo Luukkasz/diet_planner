@@ -2,7 +2,7 @@ import React from 'react';
 import './ProductList.scss';
 import SingleProduct from "../SingleProduct/SingleProduct";
 
-function ProductList({productList}) {
+function ProductList({productList, setSinglePlan}) {
     return (
         <div className="productList__wrapper">
             <h2 className="productList__title">Product List</h2>
@@ -20,7 +20,12 @@ function ProductList({productList}) {
             <ul className="productList__list">
                 {productList.map((product,idx) => {
                     return (
-                        <SingleProduct key={idx} product={product} idx={idx}/>
+                        <SingleProduct
+                            key={idx}
+                            idx={idx}
+                            product={product}
+                            setSinglePlan={setSinglePlan}
+                            />
                     )
                 })}
 

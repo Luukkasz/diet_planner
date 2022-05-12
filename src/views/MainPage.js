@@ -3,11 +3,18 @@ import './MainPage.scss';
 import AddSinglePlan from "../components/AddSinglePlan/AddSinglePlan";
 import ProductList from "../components/ProductList/ProductList";
 
-function MainPage({productList}) {
+function MainPage({productList, singlePlan, setSinglePlan, setPlanList}) {
     return (
         <div className="mainPage__container">
-            <ProductList productList={productList}/>
-            <AddSinglePlan />
+            <ProductList
+                productList={productList}
+                setSinglePlan={setSinglePlan}
+            />
+            <AddSinglePlan
+                singlePlan={singlePlan}
+                setSinglePlan={setSinglePlan}
+                setPlanList={setPlanList}
+            />
         </div>
     );
 }

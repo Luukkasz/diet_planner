@@ -15,13 +15,20 @@ function App() {
     };
     const [newProduct, setNewProduct] = useState(initialNewProduct);
     const [productList, setProductList] = useState([]);
+    const [singlePlan, setSinglePlan] = useState([]);
+    const [planList, setPlanList] = useState([]);
 
 
     return (
         <>
             <Navigation/>
             <Routes>
-                <Route path="/" element={<MainPage productList={productList}/>}/>
+                <Route path="/" element={<MainPage
+                    productList={productList}
+                    singlePlan={singlePlan}
+                    setSinglePlan={setSinglePlan}
+                    setPlanList={setPlanList}
+                />}/>
                 <Route path="addProduct" element={<AddProduct
                     newProduct={newProduct}
                     setNewProduct={setNewProduct}
