@@ -12,6 +12,7 @@ function App() {
         proteins: '',
         carbs: '',
         fats: '',
+        weight: '',
     };
     const [newProduct, setNewProduct] = useState(initialNewProduct);
     const [productList, setProductList] = useState([]);
@@ -25,6 +26,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage
                     productList={productList}
+                    setProductList={setProductList}
                     singlePlan={singlePlan}
                     setSinglePlan={setSinglePlan}
                     setPlanList={setPlanList}
@@ -35,8 +37,13 @@ function App() {
                     productList={productList}
                     setProductList={setProductList}
                     initialNewProduct={initialNewProduct}
+                    setSinglePlan={setSinglePlan}
                 />}/>
-                <Route path="myPlans" element={<MyPlans/>}/>
+                <Route path="myPlans" element={<MyPlans
+                    planList={planList}
+                    setPlanList={setPlanList}
+
+                />}/>
             </Routes>
         </>
     );

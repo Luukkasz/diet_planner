@@ -2,21 +2,30 @@ import React, {useState} from 'react';
 import './AddSinglePlan.scss';
 
 function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
-
     const [inputPlanName, setInputPlanName] = useState('')
     const handleChange = (e) => setInputPlanName(e.target.value)
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleRemoveMeal = (el) => {
+        setSinglePlan(singlePlan.filter((singlePlanItem) => {
+            return singlePlanItem.id !== el.id;
+        }))
+    }
+
+    const handleAddPlan = () => {
+
 
         setPlanList(prevState => {
             return [
                 ...prevState,
-                singlePlan
+                {
+                    ...singlePlan,
+                    planName: inputPlanName,
+                }
             ]
         });
 
-        setSinglePlan([]);
+
+
     };
 
 
@@ -34,14 +43,14 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     value={inputPlanName}
                     onChange={handleChange}
                 />
-                <button onClick={handleSubmit}>Save</button>
+                <button onClick={handleAddPlan}>Save</button>
             </div>
 
             <div>
-                <span>Kcals: {singlePlan.reduce((acc, el) => acc + el.kcals, 0)} </span>
-                <span>Proteins: {singlePlan.reduce((acc, el) => acc + el.proteins, 0)} </span>
-                <span>Carbs: {singlePlan.reduce((acc, el) => acc + el.carbs, 0)} </span>
-                <span>Fats: {singlePlan.reduce((acc, el) => acc + el.fats, 0)} </span>
+                <span>Kcals: {singlePlan.reduce((acc, el) => acc + Number(el.kcals), 0)} </span>
+                <span>Proteins: {singlePlan.reduce((acc, el) => acc + Number(el.proteins), 0)} </span>
+                <span>Carbs: {singlePlan.reduce((acc, el) => acc + Number(el.carbs), 0)} </span>
+                <span>Fats: {singlePlan.reduce((acc, el) => acc + Number(el.fats), 0)} </span>
             </div>
 
             <div>
@@ -50,8 +59,12 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     {singlePlan
                         .filter((el) => el.meal === 'breakfast')
                         .map((el, idx) => {
-                        return <li key={idx}> {el.name} - {el.kcals} - {el.meal} </li>
-                    })}
+                            return <li key={idx}>
+                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g
+                                ---
+                                <button onClick={() => handleRemoveMeal(el)}>X</button>
+                            </li>
+                        })}
                 </ul>
             </div>
 
@@ -61,7 +74,11 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     {singlePlan
                         .filter((el) => el.meal === 'lunch')
                         .map((el, idx) => {
-                            return <li key={idx}> {el.name} - {el.kcals} - {el.meal} </li>
+                            return <li key={idx}>
+                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g
+                                ---
+                                <button onClick={() => handleRemoveMeal(el)}>X</button>
+                            </li>
                         })}
                 </ul>
             </div>
@@ -72,7 +89,11 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     {singlePlan
                         .filter((el) => el.meal === 'dinner')
                         .map((el, idx) => {
-                            return <li key={idx}> {el.name} - {el.kcals} - {el.meal} </li>
+                            return <li key={idx}>
+                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g
+                                ---
+                                <button onClick={() => handleRemoveMeal(el)}>X</button>
+                            </li>
                         })}
                 </ul>
             </div>
@@ -83,7 +104,11 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     {singlePlan
                         .filter((el) => el.meal === 'snack')
                         .map((el, idx) => {
-                            return <li key={idx}> {el.name} - {el.kcals} - {el.meal} </li>
+                            return <li key={idx}>
+                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g
+                                ---
+                                <button onClick={() => handleRemoveMeal(el)}>X</button>
+                            </li>
                         })}
                 </ul>
             </div>

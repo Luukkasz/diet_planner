@@ -18,9 +18,12 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
         setProductList(prevState => {
             return [
                 ...prevState,
-                {...newProduct,
-                    id: Math.random()*1000,
-                    kcals:(Number(newProduct.proteins) * 4) + (Number(newProduct.carbs) * 4) + (Number(newProduct.fats) * 9) }
+                {
+                    ...newProduct,
+                    id: Math.random() * 1000,
+                    kcals: (Number(newProduct.proteins) * 4) + (Number(newProduct.carbs) * 4) + (Number(newProduct.fats) * 9),
+                    weight: 100,
+                }
             ]
         });
 
