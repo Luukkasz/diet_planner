@@ -15,7 +15,6 @@ function SingleProduct({product, idx, setSinglePlan, productList, setProductList
     }
 
 
-
     const handleAddMeal = (e) => {
         e.preventDefault();
         if (!weight) return;
@@ -35,8 +34,6 @@ function SingleProduct({product, idx, setSinglePlan, productList, setProductList
                 }
             ]
         })
-
-
 
     };
 

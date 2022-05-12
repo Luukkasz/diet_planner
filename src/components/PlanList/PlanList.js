@@ -27,7 +27,10 @@ function PlanList({planList, setPlanList, setPlanToShow}) {
                 {planList.map((singlePlan,idx) => {
                     return (
                         <li key={idx}>
-                            <span>{singlePlan.planName}</span>
+                            <span>{singlePlan
+                                .filter(el => el.planName)
+                                .map(el => el.planName)}
+                            </span>
                             <button onClick={() => handleShowPlan(singlePlan)}>Show plan</button>
                         </li>
                     )
