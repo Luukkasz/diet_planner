@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 import './ProductList.scss';
 import SingleProduct from "../SingleProduct/SingleProduct";
 
-function ProductList({productList, setSinglePlan, setProductList}) {
+function ProductList({productList, setSinglePlan, setProductList, hide}) {
     const [filteredProductList, setFilteredProductList] = useState(productList);
     const [searchProductInput, setSearchProductInput] = useState('')
 
-    useEffect(() => setFilteredProductList(productList),[productList]);
+    useEffect(() => setFilteredProductList(productList), [productList]);
 
     const handleInputChange = (e) => {
         const keyword = e.target.value;
@@ -19,7 +19,6 @@ function ProductList({productList, setSinglePlan, setProductList}) {
         } else {
             setFilteredProductList(productList);
         }
-
         setSearchProductInput(keyword);
     }
 
@@ -40,7 +39,7 @@ function ProductList({productList, setSinglePlan, setProductList}) {
             </div>
 
             <ul className="productList__list">
-                {filteredProductList.map((product,idx) => {
+                {filteredProductList.map((product, idx) => {
                     return (
                         <SingleProduct
                             key={idx}
@@ -49,7 +48,8 @@ function ProductList({productList, setSinglePlan, setProductList}) {
                             setSinglePlan={setSinglePlan}
                             productList={productList}
                             setProductList={setProductList}
-                            />
+                            hide={hide}
+                        />
                     )
                 })}
 

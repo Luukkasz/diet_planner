@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import './SingleProduct.scss';
 
-function SingleProduct({product, idx, setSinglePlan, productList, setProductList}) {
+function SingleProduct({product, setSinglePlan, productList, setProductList, hide}) {
     const [meal, setMeal] = useState('breakfast')
     const [weight, setWeight] = useState('');
 
     const handleMealChange = (e) => setMeal(e.target.value);
     const handleWeightChange = (e) => setWeight(e.target.value);
 
-    const handleRemoveProduct = (e) => {
+    const handleRemoveProduct = () => {
         setProductList(productList.filter((item) => {
             return item.id !== product.id;
         }));
@@ -33,8 +33,7 @@ function SingleProduct({product, idx, setSinglePlan, productList, setProductList
                     weight: weight,
                 }
             ]
-        })
-
+        });
     };
 
     return (
@@ -49,7 +48,7 @@ function SingleProduct({product, idx, setSinglePlan, productList, setProductList
             <p className="productList__item-description">Fats: {product.fats}g</p>
             <p className="productList__item-description">{product.kcals} kcals</p>
 
-            <form onSubmit={handleAddMeal}>
+            {!hide && <form onSubmit={handleAddMeal}>
                 <input
                     type="number"
                     placeholder="Weigth of grams"
@@ -66,7 +65,7 @@ function SingleProduct({product, idx, setSinglePlan, productList, setProductList
                     <option value="snack">Snack</option>
                 </select>
                 <button>Add to plan</button>
-            </form>
+            </form>}
         </li>
     );
 }

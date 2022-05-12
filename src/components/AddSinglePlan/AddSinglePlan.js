@@ -2,12 +2,14 @@ import React, {useState} from 'react';
 import './AddSinglePlan.scss';
 
 function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
-    const [inputPlanName, setInputPlanName] = useState({
-        planName: '',
-    })
-    const handleChange = (e) => setInputPlanName({
-        [e.target.name]: e.target.value
-    })
+    const initialInputPlanName = {planName: '', planId: Math.random() * 10000}
+    const [inputPlanName, setInputPlanName] = useState(initialInputPlanName)
+    const handleChange = (e) => setInputPlanName(prevState => {
+        return {
+            ...prevState,
+            [e.target.name]: e.target.value
+        };
+    });
 
     const handleRemoveMeal = (el) => {
         setSinglePlan(singlePlan.filter((singlePlanItem) => {
@@ -16,18 +18,20 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
     }
 
     const handleAddPlan = () => {
-const xyz = [...singlePlan];
-    xyz.push(inputPlanName);
+        if (!inputPlanName.planName || singlePlan.length === 0) return;
 
+        const singlePlanToAdd = [...singlePlan];
+        singlePlanToAdd.push(inputPlanName);
 
         setPlanList(prevState => {
             return [
                 ...prevState,
-                    xyz
+                singlePlanToAdd
             ]
         });
 
-
+        setSinglePlan([]);
+        setInputPlanName(initialInputPlanName);
 
     };
 
@@ -63,7 +67,8 @@ const xyz = [...singlePlan];
                         .filter((el) => el.meal === 'breakfast')
                         .map((el, idx) => {
                             return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g
+                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
+                                - {el.proteins}g, {el.carbs}g, {el.fats}g
                                 ---
                                 <button onClick={() => handleRemoveMeal(el)}>X</button>
                             </li>
@@ -78,7 +83,8 @@ const xyz = [...singlePlan];
                         .filter((el) => el.meal === 'lunch')
                         .map((el, idx) => {
                             return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g
+                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
+                                - {el.proteins}g, {el.carbs}g, {el.fats}g
                                 ---
                                 <button onClick={() => handleRemoveMeal(el)}>X</button>
                             </li>
@@ -93,7 +99,8 @@ const xyz = [...singlePlan];
                         .filter((el) => el.meal === 'dinner')
                         .map((el, idx) => {
                             return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g
+                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
+                                - {el.proteins}g, {el.carbs}g, {el.fats}g
                                 ---
                                 <button onClick={() => handleRemoveMeal(el)}>X</button>
                             </li>
@@ -108,7 +115,8 @@ const xyz = [...singlePlan];
                         .filter((el) => el.meal === 'snack')
                         .map((el, idx) => {
                             return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g
+                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
+                                - {el.proteins}g, {el.carbs}g, {el.fats}g
                                 ---
                                 <button onClick={() => handleRemoveMeal(el)}>X</button>
                             </li>

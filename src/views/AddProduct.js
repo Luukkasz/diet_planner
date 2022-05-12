@@ -10,15 +10,14 @@ function AddProduct({newProduct, setNewProduct, productList, setProductList, ini
                             setNewProduct={setNewProduct}
                             productList={productList}
                             setProductList={setProductList}
-                            initialNewProduct={initialNewProduct}  />
-
-
+                            initialNewProduct={initialNewProduct}/>
 
 
             <ProductList
                 productList={productList}
                 setProductList={setProductList}
                 setSinglePlan={setSinglePlan}
+                hide
             />
         </div>
 
