@@ -2,6 +2,9 @@
 This app will help you make individual nutritional plans. <br>
 Healthy body === healthy mind :-)
 
+
+The application is still under development. <br>
+The final version will be available around May 20, 2022.
 <br>
 
 #### To start a project - download it and type in the terminal:
