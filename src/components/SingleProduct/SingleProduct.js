@@ -51,7 +51,7 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
             {!hide && <form onSubmit={handleAddMeal}>
                 <input
                     type="number"
-                    placeholder="Weigth of grams"
+                    placeholder="Weight in grams"
                     value={weight}
                     onChange={handleWeightChange}
 
