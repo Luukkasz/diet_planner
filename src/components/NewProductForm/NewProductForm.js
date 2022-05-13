@@ -1,6 +1,7 @@
 import React from "react";
 import './NewProductForm.scss';
 
+
 function NewProductForm({newProduct, setNewProduct, setProductList, initialNewProduct}) {
 
 
@@ -16,6 +17,7 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
     const handleAddProduct = (e) => {
         e.preventDefault();
         setProductList(prevState => {
+
             return [
                 ...prevState,
                 {
