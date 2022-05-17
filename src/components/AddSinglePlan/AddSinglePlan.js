@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import './AddSinglePlan.scss';
+import Button from "@mui/material/Button";
+import TextField from '@mui/material/TextField';
 
 function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
     const initialInputPlanName = {planName: '', planId: Math.random() * 10000}
@@ -38,19 +40,50 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
 
     return (
         <div className="productList__wrapper">
-            <h2 className="productList__title">Add plan</h2>
+            <h2 className="addSinglePlan__title">Add plan</h2>
             <div className="addPlan__save-wrapper">
-                <label htmlFor="planName">
-                    Plan name:
-                </label>
-                <input
-                    type="text"
-                    id="planName"
-                    name="planName"
-                    value={inputPlanName.planName}
-                    onChange={handleChange}
-                />
-                <button onClick={handleAddPlan}>Save</button>
+                {/*<label htmlFor="planName">*/}
+                {/*    Plan name:*/}
+                {/*</label>*/}
+                {/*<input*/}
+                {/*    type="text"*/}
+                {/*    id="planName"*/}
+                {/*    name="planName"*/}
+                {/*    placeholder="Plan name:"*/}
+                {/*    value={inputPlanName.planName}*/}
+                {/*    onChange={handleChange}*/}
+                {/*/>*/}
+
+                <div className="addSinglePlan__form-wrapper">
+
+                    <TextField
+                        id="planName"
+                        name="planName"
+                        value={inputPlanName.planName}
+                        onChange={handleChange}
+                        label="Plan name: "
+                        variant="standard"
+                        autoComplete="off"
+                    />
+
+                    {/*<button onClick={handleAddPlan}>Save</button>*/}
+
+                    <Button
+                        onClick={handleAddPlan}
+                        variant="outlined"
+                        size="small"
+                        sx={{
+                            color: 'cornflowerblue',
+                            textTransform: 'none',
+                            alignSelf: 'end',
+                        }}>
+                        Save
+                    </Button>
+
+                </div>
+
+
+
             </div>
 
             <div className="productList__meal">

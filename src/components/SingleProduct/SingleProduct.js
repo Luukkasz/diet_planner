@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './SingleProduct.scss';
+import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 
 function SingleProduct({product, setSinglePlan, productList, setProductList, hide}) {
     const [meal, setMeal] = useState('breakfast')
@@ -40,7 +41,13 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
         <li className="productList__item">
             <div className="productList__title-wrapper">
                 <h3 className="productList__item-name"> {product.name}, in 100 grams: </h3>
-                <button onClick={handleRemoveProduct}>X</button>
+                <DeleteTwoToneIcon
+                    fontSize="small"
+                    onClick={handleRemoveProduct}
+                    sx={{
+                        cursor: 'pointer',
+                    }}
+                />
             </div>
 
             <p className="productList__item-description">Proteins: {product.proteins}g</p>
