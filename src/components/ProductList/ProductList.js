@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './ProductList.scss';
 import SingleProduct from "../SingleProduct/SingleProduct";
 
+
 function ProductList({productList, setSinglePlan, setProductList, hide}) {
     const [filteredProductList, setFilteredProductList] = useState(productList);
     const [searchProductInput, setSearchProductInput] = useState('')

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './PlanList.scss';
-
+import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
+import Button from '@mui/material/Button';
 
 
 function PlanList({planList, setPlanList, setPlanToShow}) {
@@ -54,13 +55,36 @@ function PlanList({planList, setPlanList, setPlanToShow}) {
             <ul className="productList__list">
                 {filteredPlanList.map((singlePlan, idx) => {
                     return (
-                        <li key={idx}>
-                            <span>{singlePlan
-                                .filter(el => el.planName)
-                                .map(el => el.planName)}
+                        <li className="planList__li" key={idx}>
+                                  <span>{singlePlan
+                                      .filter(el => el.planName)
+                                      .map(el => el.planName)}
                             </span>
-                            <button onClick={() => handleShowPlan(singlePlan)}>Show plan</button>
-                            <button onClick={() => handleRemovePlan(singlePlan)}>X</button>
+
+                            <div className="planList__icons-container">
+                                <Button
+                                    onClick={() => handleShowPlan(singlePlan)}
+                                    variant="outlined"
+                                    size="small"
+                                    sx={{
+                                        padding: 0,
+                                        letterSpacing: 0,
+                                        color: 'cornflowerblue',
+                                        textTransform: 'none',
+                                    }}>
+                                    Show
+                                </Button>
+
+
+                                <DeleteTwoToneIcon
+                                    fontSize="small"
+                                    onClick={() => handleRemovePlan(singlePlan)}
+                                    sx={{
+                                        cursor: 'pointer',
+                                    }}
+                                />
+                            </div>
+
                         </li>
                     )
                 })}
