@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './SingleProduct.scss';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
+import Paper from '@mui/material/Paper';
 
 function SingleProduct({product, setSinglePlan, productList, setProductList, hide}) {
     const [meal, setMeal] = useState('breakfast')
@@ -38,7 +39,15 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
     };
 
     return (
-        <li className="productList__item">
+        // <li className="productList__item">
+        <Paper
+            elevation={3}
+            sx={{
+                marginTop: 3,
+                padding: 2,
+                backgroundColor: '#efefef',
+                fontSize: 13,
+            }}>
             <div className="productList__title-wrapper">
                 <h3 className="productList__item-name"> {product.name}, in 100 grams: </h3>
                 <DeleteTwoToneIcon
@@ -73,7 +82,8 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
                 </select>
                 <button>Add to plan</button>
             </form>}
-        </li>
+        </Paper>
+        // </li>
     );
 }
 

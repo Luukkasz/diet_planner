@@ -41,19 +41,6 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
     return (
         <div className="productList__wrapper">
             <h2 className="addSinglePlan__title">Add plan</h2>
-            <div className="addPlan__save-wrapper">
-                {/*<label htmlFor="planName">*/}
-                {/*    Plan name:*/}
-                {/*</label>*/}
-                {/*<input*/}
-                {/*    type="text"*/}
-                {/*    id="planName"*/}
-                {/*    name="planName"*/}
-                {/*    placeholder="Plan name:"*/}
-                {/*    value={inputPlanName.planName}*/}
-                {/*    onChange={handleChange}*/}
-                {/*/>*/}
-
                 <div className="addSinglePlan__form-wrapper">
 
                     <TextField
@@ -65,8 +52,6 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                         variant="standard"
                         autoComplete="off"
                     />
-
-                    {/*<button onClick={handleAddPlan}>Save</button>*/}
 
                     <Button
                         onClick={handleAddPlan}
@@ -81,10 +66,6 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     </Button>
 
                 </div>
-
-
-
-            </div>
 
             <div className="productList__meal">
                 <span>Kcals: {singlePlan.reduce((acc, el) => acc + Number(el.kcals), 0)} </span>

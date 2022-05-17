@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './ProductList.scss';
 import SingleProduct from "../SingleProduct/SingleProduct";
+import TextField from "@mui/material/TextField";
 
 
 function ProductList({productList, setSinglePlan, setProductList, hide}) {
@@ -25,36 +26,40 @@ function ProductList({productList, setSinglePlan, setProductList, hide}) {
 
     return (
         <div className="productList__wrapper">
-            <h2 className="productList__title">Product List</h2>
-            <div className="productList__input-wrapper">
-                <label htmlFor="searchProduct">
-                    Search product:
-                </label>
-                <input
-                    type="text"
-                    name="searchProduct"
-                    id="searchProduct"
-                    value={searchProductInput}
-                    onChange={handleInputChange}
-                />
-            </div>
 
-            <ul className="productList__list">
-                {filteredProductList.map((product, idx) => {
-                    return (
-                        <SingleProduct
-                            key={idx}
-                            idx={idx}
-                            product={product}
-                            setSinglePlan={setSinglePlan}
-                            productList={productList}
-                            setProductList={setProductList}
-                            hide={hide}
-                        />
-                    )
-                })}
+            {/*<div className="overflow__wrapper">*/}
 
-            </ul>
+                <h2 className="productList__title">Product List</h2>
+                <div className="productList__input-wrapper">
+                    <TextField
+                        name="searchProduct"
+                        id="searchProduct"
+                        value={searchProductInput}
+                        onChange={handleInputChange}
+                        label="Search product: "
+                        variant="standard"
+                        autoComplete="off"/>
+                </div>
+
+                <ul className="productList__list">
+                    {filteredProductList.map((product, idx) => {
+                        return (
+                            <SingleProduct
+                                key={idx}
+                                idx={idx}
+                                product={product}
+                                setSinglePlan={setSinglePlan}
+                                productList={productList}
+                                setProductList={setProductList}
+                                hide={hide}
+                            />
+                        )
+                    })}
+
+                </ul>
+
+            {/*</div>*/}
+
 
 
         </div>
