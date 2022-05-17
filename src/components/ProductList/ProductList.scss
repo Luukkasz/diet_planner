@@ -1,8 +1,13 @@
 .productList__wrapper {
-  border: 1px solid black;
   height: 70vh;
-  width: 40%;
+  width: 100%;
+  max-width: 550px;
+  margin: 25px;
   padding: 40px;
+  border: 1px solid lightgray;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px -10px rgb(0 0 0 / 30%);
+  background-color: #fbfbfb;
   overflow: auto;
 
   @media(max-width: 800px){

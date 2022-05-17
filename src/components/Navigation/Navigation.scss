@@ -1,9 +1,18 @@
 .page__header {
   height: 10vh;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid lightgray;
+
+  @media(max-width: 800px){
+    font-size: 13px;
+    height: 12vh;
+  }
 }
 
+.header__title {
+  color: #374b52;
+  margin-right: 25px;
+}
 
 .header__list {
   display: flex;
@@ -11,7 +20,10 @@
 }
 
 .header__link {
+  color: #374b52;
+  font-weight: bold;
   &.active {
-    color: black;
+    color: cornflowerblue;
+    padding-bottom: 5px;
   }
 }

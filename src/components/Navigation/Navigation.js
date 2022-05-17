@@ -6,7 +6,10 @@ function Navigation(props) {
     return (
         <header className="page__header">
             <div className="container header__container">
-                <h1 className="header__title">Diet Planner</h1>
+                <NavLink to="/">
+                    <h1 className="header__title">Diet Planner</h1>
+                </NavLink>
+
                 <nav>
                     <ul className="header__list">
                         <li>
