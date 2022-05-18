@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './AddSinglePlan.scss';
 import Button from "@mui/material/Button";
 import TextField from '@mui/material/TextField';
+import HighlightOffTwoToneIcon from '@mui/icons-material/HighlightOffTwoTone';
 
 function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
     const initialInputPlanName = {planName: '', planId: Math.random() * 10000}
@@ -68,10 +69,10 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                 </div>
 
             <div className="productList__meal">
-                <span>Kcals: {singlePlan.reduce((acc, el) => acc + Number(el.kcals), 0)} </span>
-                <span>Proteins: {singlePlan.reduce((acc, el) => acc + Number(el.proteins), 0)} </span>
-                <span>Carbs: {singlePlan.reduce((acc, el) => acc + Number(el.carbs), 0)} </span>
-                <span>Fats: {singlePlan.reduce((acc, el) => acc + Number(el.fats), 0)} </span>
+                <span className="addSinglePlan__infoSpan"><strong>Kcals:</strong> {singlePlan.reduce((acc, el) => acc + Number(el.kcals), 0)} </span>
+                <span className="addSinglePlan__infoSpan"><strong>Proteins:</strong> {singlePlan.reduce((acc, el) => acc + Number(el.proteins), 0)} </span>
+                <span className="addSinglePlan__infoSpan"><strong>Carbs:</strong> {singlePlan.reduce((acc, el) => acc + Number(el.carbs), 0)} </span>
+                <span className="addSinglePlan__infoSpan"><strong>Fats:</strong> {singlePlan.reduce((acc, el) => acc + Number(el.fats), 0)} </span>
             </div>
 
             <div className="productList__meal">
@@ -80,11 +81,17 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     {singlePlan
                         .filter((el) => el.meal === 'breakfast')
                         .map((el, idx) => {
-                            return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
-                                - {el.proteins}g, {el.carbs}g, {el.fats}g
-                                ---
-                                <button onClick={() => handleRemoveMeal(el)}>X</button>
+                            return <li key={idx} className="addSinglePlan__item">
+
+                                <HighlightOffTwoToneIcon
+                                    onClick={() => handleRemoveMeal(el)}
+                                    fontSize="small"
+                                    sx={{
+                                        cursor: 'pointer',
+                                    }}/>
+
+                                <span>{el.name} ({el.weight}g - {el.kcals} kcal)</span>
+                                <span>(P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g.</span>
                             </li>
                         })}
                 </ul>
@@ -96,11 +103,17 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     {singlePlan
                         .filter((el) => el.meal === 'lunch')
                         .map((el, idx) => {
-                            return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
-                                - {el.proteins}g, {el.carbs}g, {el.fats}g
-                                ---
-                                <button onClick={() => handleRemoveMeal(el)}>X</button>
+                            return <li key={idx} className="addSinglePlan__item">
+
+                                <HighlightOffTwoToneIcon
+                                    onClick={() => handleRemoveMeal(el)}
+                                    fontSize="small"
+                                    sx={{
+                                        cursor: 'pointer',
+                                    }}/>
+
+                                <span>{el.name} ({el.weight}g - {el.kcals} kcal)</span>
+                                <span>(P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g.</span>
                             </li>
                         })}
                 </ul>
@@ -112,11 +125,17 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     {singlePlan
                         .filter((el) => el.meal === 'dinner')
                         .map((el, idx) => {
-                            return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
-                                - {el.proteins}g, {el.carbs}g, {el.fats}g
-                                ---
-                                <button onClick={() => handleRemoveMeal(el)}>X</button>
+                            return <li key={idx} className="addSinglePlan__item">
+
+                                <HighlightOffTwoToneIcon
+                                    onClick={() => handleRemoveMeal(el)}
+                                    fontSize="small"
+                                    sx={{
+                                        cursor: 'pointer',
+                                    }}/>
+
+                                <span>{el.name} ({el.weight}g - {el.kcals} kcal)</span>
+                                <span>(P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g.</span>
                             </li>
                         })}
                 </ul>
@@ -128,11 +147,17 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                     {singlePlan
                         .filter((el) => el.meal === 'snack')
                         .map((el, idx) => {
-                            return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
-                                - {el.proteins}g, {el.carbs}g, {el.fats}g
-                                ---
-                                <button onClick={() => handleRemoveMeal(el)}>X</button>
+                            return <li key={idx} className="addSinglePlan__item">
+
+                                <HighlightOffTwoToneIcon
+                                    onClick={() => handleRemoveMeal(el)}
+                                    fontSize="small"
+                                    sx={{
+                                        cursor: 'pointer',
+                                    }}/>
+
+                                <span>{el.name} ({el.weight}g - {el.kcals} kcal)</span>
+                                <span>(P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g.</span>
                             </li>
                         })}
                 </ul>

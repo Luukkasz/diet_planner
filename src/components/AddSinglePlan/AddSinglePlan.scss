@@ -1,5 +1,5 @@
 .productList__meal {
-  margin: 20px 0;
+  margin: 40px 0;
 }
 
 .addSinglePlan__title{
@@ -12,4 +12,20 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+.addSinglePlan__infoSpan{
+  display: inline-block;
+  margin-right: 10px;
+
+  @media(max-width: 800px){
+    margin-bottom: 10px;
+  }
+}
+
+.addSinglePlan__item{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px 0;
 }

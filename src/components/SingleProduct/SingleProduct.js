@@ -55,6 +55,7 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
                     onClick={handleRemoveProduct}
                     sx={{
                         cursor: 'pointer',
+                        alignSelf: 'start',
                     }}
                 />
             </div>

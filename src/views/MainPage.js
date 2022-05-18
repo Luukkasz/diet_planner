@@ -6,15 +6,15 @@ import ProductList from "../components/ProductList/ProductList";
 function MainPage({productList, setProductList, singlePlan, setSinglePlan, setPlanList}) {
     return (
         <div className="mainPage__container">
-            <ProductList
-                productList={productList}
-                setSinglePlan={setSinglePlan}
-                setProductList={setProductList}
-            />
             <AddSinglePlan
                 singlePlan={singlePlan}
                 setSinglePlan={setSinglePlan}
                 setPlanList={setPlanList}
+            />
+            <ProductList
+                productList={productList}
+                setSinglePlan={setSinglePlan}
+                setProductList={setProductList}
             />
         </div>
     );
