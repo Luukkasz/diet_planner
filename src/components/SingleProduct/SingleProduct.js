@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './SingleProduct.scss';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import Paper from '@mui/material/Paper';
+import TextField from '@mui/material/TextField';
+import Button from "@mui/material/Button";
 
 function SingleProduct({product, setSinglePlan, productList, setProductList, hide}) {
     const [meal, setMeal] = useState('breakfast')
@@ -39,7 +41,6 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
     };
 
     return (
-        // <li className="productList__item">
         <Paper
             elevation={3}
             sx={{
@@ -55,7 +56,6 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
                     onClick={handleRemoveProduct}
                     sx={{
                         cursor: 'pointer',
-                        alignSelf: 'start',
                     }}
                 />
             </div>
@@ -65,26 +65,45 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
             <p className="productList__item-description">Fats: {product.fats}g</p>
             <p className="productList__item-description">{product.kcals} kcals</p>
 
-            {!hide && <form onSubmit={handleAddMeal}>
-                <input
-                    type="number"
-                    placeholder="Weight in grams"
-                    value={weight}
-                    onChange={handleWeightChange}
+            {!hide &&
+                <form onSubmit={handleAddMeal} className="singleProduct__form">
 
-                />
-                <select
-                    value={meal}
-                    onChange={handleMealChange}>
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snack</option>
-                </select>
-                <button>Add to plan</button>
-            </form>}
+                    <div className="singleProduct__info-wrapper">
+                        <input
+                            type="number"
+                            placeholder="Weight in grams"
+                            value={weight}
+                            onChange={handleWeightChange}/>
+
+
+                        <select
+                            value={meal}
+                            onChange={handleMealChange}>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="snack">Snack</option>
+                        </select>
+
+                    </div>
+
+                    {/*<button>Add to plan</button>*/}
+
+                    <Button
+                        variant="outlined"
+                        size="small"
+                        sx={{
+                            paddingTop: 0,
+                            paddingBottom: 0,
+                            letterSpacing: 0,
+                            color: 'cornflowerblue',
+                            textTransform: 'none',
+                        }}>
+                        Add to plan
+                    </Button>
+
+                </form>}
         </Paper>
-        // </li>
     );
 }
 

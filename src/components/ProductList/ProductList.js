@@ -27,8 +27,6 @@ function ProductList({productList, setSinglePlan, setProductList, hide}) {
     return (
         <div className="productList__wrapper">
 
-            {/*<div className="overflow__wrapper">*/}
-
                 <h2 className="productList__title">Product List</h2>
                 <div className="productList__input-wrapper">
                     <TextField
@@ -57,10 +55,6 @@ function ProductList({productList, setSinglePlan, setProductList, hide}) {
                     })}
 
                 </ul>
-
-            {/*</div>*/}
-
-
 
         </div>
     );

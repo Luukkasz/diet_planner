@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './PlanList.scss';
 import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 import Button from '@mui/material/Button';
+import TextField from "@mui/material/TextField";
 
 
 function PlanList({planList, setPlanList, setPlanToShow}) {
@@ -40,16 +41,16 @@ function PlanList({planList, setPlanList, setPlanToShow}) {
         <div className="productList__wrapper">
             <h2 className="productList__title">Plan list</h2>
             <div className="productList__input-wrapper">
-                <label htmlFor="searchPlan">
-                    Search plan:
-                </label>
-                <input
-                    type="text"
-                    name="searchPlan"
-                    id="searchPlan"
-                    value={searchPlanInput}
-                    onChange={handleSearchPlan}
-                />
+                <div className="productList__input-wrapper">
+                    <TextField
+                        name="searchPlan"
+                        id="searchPlan"
+                        value={searchPlanInput}
+                        onChange={handleSearchPlan}
+                        label="Search plan: "
+                        variant="standard"
+                        autoComplete="off"/>
+                </div>
             </div>
 
             <ul className="productList__list">
@@ -84,14 +85,9 @@ function PlanList({planList, setPlanList, setPlanToShow}) {
                                     }}
                                 />
                             </div>
-
                         </li>
-                    )
-                })}
-
+                    )})}
             </ul>
-
-
         </div>
     );
 }

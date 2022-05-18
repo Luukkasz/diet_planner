@@ -1,5 +1,6 @@
 import React from 'react';
 import './SinglePlan.scss';
+import StarTwoToneIcon from '@mui/icons-material/StarTwoTone';
 
 
 function SinglePlan({planList, planToShow}) {
@@ -22,10 +23,10 @@ function SinglePlan({planList, planToShow}) {
             </h2>
 
             <div className="productList__meal">
-                <span>Kcals: {filteredPlanToShow.reduce((acc, el) => acc + Number(el.kcals), 0)} </span>
-                <span>Proteins: {filteredPlanToShow.reduce((acc, el) => acc + Number(el.proteins), 0)} </span>
-                <span>Carbs: {filteredPlanToShow.reduce((acc, el) => acc + Number(el.carbs), 0)} </span>
-                <span>Fats: {filteredPlanToShow.reduce((acc, el) => acc + Number(el.fats), 0)} </span>
+                <span className="addSinglePlan__infoSpan"><strong>Kcals:</strong>  {filteredPlanToShow.reduce((acc, el) => acc + Number(el.kcals), 0)} </span>
+                <span className="addSinglePlan__infoSpan"><strong>Proteins:</strong> {filteredPlanToShow.reduce((acc, el) => acc + Number(el.proteins), 0)} </span>
+                <span className="addSinglePlan__infoSpan"><strong>Carbs:</strong> {filteredPlanToShow.reduce((acc, el) => acc + Number(el.carbs), 0)} </span>
+                <span className="addSinglePlan__infoSpan"><strong>Fats:</strong> {filteredPlanToShow.reduce((acc, el) => acc + Number(el.fats), 0)} </span>
             </div>
 
             <div className="productList__meal">
@@ -34,9 +35,10 @@ function SinglePlan({planList, planToShow}) {
                     {filteredPlanToShow
                         .filter((el) => el.meal === 'breakfast')
                         .map((el, idx) => {
-                            return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
-                                - {el.proteins}g, {el.carbs}g, {el.fats}g
+                            return <li key={idx} className="addSinglePlan__item">
+                                <StarTwoToneIcon fontSize="small" />
+                                <span>{el.name} ({el.weight}g - {el.kcals} kcal)</span>
+                                <span>(P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g.</span>
                             </li>
                         })}
                 </ul>
@@ -48,9 +50,10 @@ function SinglePlan({planList, planToShow}) {
                     {filteredPlanToShow
                         .filter((el) => el.meal === 'lunch')
                         .map((el, idx) => {
-                            return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
-                                - {el.proteins}g, {el.carbs}g, {el.fats}g
+                            return <li key={idx} className="addSinglePlan__item">
+                                <StarTwoToneIcon fontSize="small" />
+                                <span>{el.name} ({el.weight}g - {el.kcals} kcal)</span>
+                                <span>(P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g.</span>
                             </li>
                         })}
                 </ul>
@@ -62,9 +65,10 @@ function SinglePlan({planList, planToShow}) {
                     {filteredPlanToShow
                         .filter((el) => el.meal === 'dinner')
                         .map((el, idx) => {
-                            return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
-                                - {el.proteins}g, {el.carbs}g, {el.fats}g
+                            return <li key={idx} className="addSinglePlan__item">
+                                <StarTwoToneIcon fontSize="small" />
+                                <span>{el.name} ({el.weight}g - {el.kcals} kcal)</span>
+                                <span>(P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g.</span>
                             </li>
                         })}
                 </ul>
@@ -76,9 +80,10 @@ function SinglePlan({planList, planToShow}) {
                     {filteredPlanToShow
                         .filter((el) => el.meal === 'snack')
                         .map((el, idx) => {
-                            return <li key={idx}>
-                                - {el.name} ({el.weight}g) - {el.kcals} kcal | (P/C/F)
-                                - {el.proteins}g, {el.carbs}g, {el.fats}g
+                            return <li key={idx} className="addSinglePlan__item">
+                                <StarTwoToneIcon fontSize="small" />
+                                <span>{el.name} ({el.weight}g - {el.kcals} kcal)</span>
+                                <span>(P/C/F) - {el.proteins}g, {el.carbs}g, {el.fats}g.</span>
                             </li>
                         })}
                 </ul>
