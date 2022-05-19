@@ -17,15 +17,12 @@ function ProductListWithAdd({productList}) {
             </div>
 
             <ul className="productList__list">
-                {productList.map((product,idx) => {
+                {productList.map((product, idx) => {
                     return (
                         <SingleProduct key={idx} product={product} idx={idx}/>
                     )
                 })}
-
             </ul>
-
-
         </div>
     );
 }

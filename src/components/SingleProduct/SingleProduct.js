@@ -45,11 +45,11 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
             sx={{
                 marginTop: 3,
                 padding: 2,
-                backgroundColor: '#efefef',
+                backgroundColor: '#f3f3f3',
                 fontSize: 13,
             }}>
-            <div className="productList__title-wrapper">
-                <h3 className="productList__item-name"> {product.name}, in 100 grams: </h3>
+            <div className="singleProduct__title-wrapper">
+                <h3 className="singleProduct__item-name"> {product.name}, in 100 grams: </h3>
                 <DeleteTwoToneIcon
                     fontSize="small"
                     onClick={handleRemoveProduct}
@@ -59,10 +59,10 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
                 />
             </div>
 
-            <p className="productList__item-description">Proteins: {product.proteins}g</p>
-            <p className="productList__item-description">Carbs: {product.carbs}g</p>
-            <p className="productList__item-description">Fats: {product.fats}g</p>
-            <p className="productList__item-description">{product.kcals} kcals</p>
+            <p className="singleProduct__item-description">Proteins: {product.proteins}g</p>
+            <p className="singleProduct__item-description">Carbs: {product.carbs}g</p>
+            <p className="singleProduct__item-description">Fats: {product.fats}g</p>
+            <p className="singleProduct__item-descriptionLast">{product.kcals} kcals</p>
 
             {!hide &&
                 <form onSubmit={handleAddMeal} className="singleProduct__form">
@@ -86,7 +86,7 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
                     </div>
 
 
-                    <div className="testButton">
+                    <div className="singleProduct__addButton">
                         <Button
                             type="submit"
                             variant="outlined"
@@ -102,8 +102,6 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
                             Add to plan
                         </Button>
                     </div>
-
-
                 </form>}
         </Paper>
     );

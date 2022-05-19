@@ -2,12 +2,11 @@ import React from "react";
 import './NewProductForm.scss';
 import Input from '@mui/material/Input';
 import Button from "@mui/material/Button";
-const ariaLabel = { 'aria-label': 'description' };
+
+const ariaLabel = {'aria-label': 'description'};
 
 
 function NewProductForm({newProduct, setNewProduct, setProductList, initialNewProduct}) {
-
-
     const handleChange = (e) => {
         setNewProduct(prevState => {
             return {
@@ -19,7 +18,7 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
 
     const handleAddProduct = (e) => {
         e.preventDefault();
-        if(!isNaN(newProduct.name)) return;
+        if (!isNaN(newProduct.name)) return;
 
         setProductList(prevState => {
 
@@ -42,8 +41,7 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
         const kcals = (Number(proteins) * 4) + (Number(carbs) * 4) + (Number(fats) * 9);
 
         if (kcals === 0) return null;
-
-        return kcals
+        return kcals;
     }
 
     return (
@@ -52,13 +50,6 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
             <form className="newProduct__form" onSubmit={handleAddProduct}>
                 <div className="newProduct__input-wrapper">
                     <label htmlFor="name">Product name: </label>
-                    {/*<input*/}
-                    {/*    type="text"*/}
-                    {/*    name="name"*/}
-                    {/*    id="name"*/}
-                    {/*    value={newProduct.name}*/}
-                    {/*    onChange={handleChange}*/}
-                    {/*    required/>*/}
 
                     <Input
                         type="text"
@@ -69,18 +60,10 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
                         required
                         inputProps={ariaLabel}
                     />
-
                 </div>
 
                 <div className="newProduct__input-wrapper">
                     <label htmlFor="proteins">Proteins in 100g: </label>
-                    {/*<input*/}
-                    {/*    type="number"*/}
-                    {/*    name="proteins"*/}
-                    {/*    id="proteins"*/}
-                    {/*    value={newProduct.proteins}*/}
-                    {/*    onChange={handleChange}*/}
-                    {/*    required/>*/}
 
                     <Input
                         type="number"
@@ -91,18 +74,10 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
                         required
                         inputProps={ariaLabel}
                     />
-
                 </div>
 
                 <div className="newProduct__input-wrapper">
                     <label htmlFor="name">Carbs in 100g: </label>
-                    {/*<input*/}
-                    {/*    type="number"*/}
-                    {/*    name="carbs"*/}
-                    {/*    id="carbs"*/}
-                    {/*    value={newProduct.carbs}*/}
-                    {/*    onChange={handleChange}*/}
-                    {/*    required/>*/}
 
                     <Input
                         type="number"
@@ -113,18 +88,10 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
                         required
                         inputProps={ariaLabel}
                     />
-
                 </div>
 
                 <div className="newProduct__input-wrapper">
                     <label htmlFor="fats">Fats in 100g: </label>
-                    {/*<input*/}
-                    {/*    type="number"*/}
-                    {/*    name="fats"*/}
-                    {/*    id="fats"*/}
-                    {/*    value={newProduct.fats}*/}
-                    {/*    onChange={handleChange}*/}
-                    {/*    required/>*/}
 
                     <Input
                         type="number"
@@ -135,15 +102,13 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
                         required
                         inputProps={ariaLabel}
                     />
-
                 </div>
 
                 <p className="newProduct__kcal">
                     Kcals in 100g: <strong>{kcalCounter(newProduct)}</strong>
                 </p>
 
-
-                <div className="newProductForm__button-wrapper">
+                <div className="newProduct__button-wrapper">
                     <Button
                         type="submit"
                         variant="outlined"

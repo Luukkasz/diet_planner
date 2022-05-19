@@ -17,11 +17,41 @@
   }
 }
 
-.singlePlan__tip{
+.singlePlan__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.singlePlan__tip {
   margin-top: 50px;
   text-align: center;
 }
 
-.singlePlan__meal{
+
+.singlePlan__meal {
   margin: 40px 0;
+}
+
+.singlePlan__infoParagraph {
+  margin-bottom: 5px;
+}
+
+.singlePlan__infoSpan{
+  display: inline-block;
+  margin-right: 10px;
+
+  @media(max-width: 800px){
+    margin-bottom: 10px;
+  }
+}
+
+.singlePlan__title-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.singlePlan__item-description:last-child{
+  margin-top: 5px;
 }

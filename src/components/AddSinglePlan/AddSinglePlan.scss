@@ -22,6 +22,20 @@
   margin: 40px 0;
 }
 
+.addSinglePlan__title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.addSinglePlan__item-name {
+  margin-bottom: 10px;
+}
+
+.addSinglePlan__item-description:last-child{
+  margin-top: 5px;
+}
+
 .addSinglePlan__title{
   text-align: center;
   margin-bottom: 20px;
@@ -43,8 +57,9 @@
   }
 }
 
-.addSinglePlan__item{
+.addSinglePlan__item {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 5px;
   margin: 10px 0;

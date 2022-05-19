@@ -39,21 +39,20 @@ function PlanList({planList, setPlanList, setPlanToShow}) {
 
     return (
         <div className="planList__wrapper">
-            <h2 className="productList__title">Plan list</h2>
-            <div className="productList__input-wrapper">
-                <div className="productList__input-wrapper">
-                    <TextField
-                        name="searchPlan"
-                        id="searchPlan"
-                        value={searchPlanInput}
-                        onChange={handleSearchPlan}
-                        label="Search plan: "
-                        variant="standard"
-                        autoComplete="off"/>
-                </div>
+            <h2 className="planList__title">Plan list</h2>
+            <div className="planList__input-wrapper">
+                <TextField
+                    name="searchPlan"
+                    id="searchPlan"
+                    value={searchPlanInput}
+                    onChange={handleSearchPlan}
+                    label="Search plan: "
+                    variant="standard"
+                    autoComplete="off"/>
             </div>
 
-            <ul className="productList__list">
+
+            <ul>
                 {filteredPlanList.map((singlePlan, idx) => {
                     return (
                         <li className="planList__li" key={idx}>
@@ -76,7 +75,6 @@ function PlanList({planList, setPlanList, setPlanToShow}) {
                                     Show
                                 </Button>
 
-
                                 <DeleteTwoToneIcon
                                     fontSize="small"
                                     onClick={() => handleRemovePlan(singlePlan)}
@@ -86,7 +84,8 @@ function PlanList({planList, setPlanList, setPlanToShow}) {
                                 />
                             </div>
                         </li>
-                    )})}
+                    )
+                })}
             </ul>
         </div>
     );

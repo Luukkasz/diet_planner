@@ -34,7 +34,7 @@ function App() {
                 await setDoc(doc(db, "productList", "productList"), {
                     ...productList
                 });
-                console.log('uaktualniono liste produktów');
+                // console.log('uaktualniono liste produktów');
             };
             save()
         }
@@ -50,7 +50,7 @@ function App() {
                 await setDoc(doc(db, "planList", "planList"), {
                     ...planList
                 });
-                console.log('uaktualniono liste planow');
+                // console.log('uaktualniono liste planow');
             };
             save()
         }
@@ -64,7 +64,7 @@ function App() {
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {
-                console.log("Document data:", docSnap.data());
+                // console.log("Document data:", docSnap.data());
                 setProductList(Object.values(docSnap.data()));
 
             } else {
@@ -81,7 +81,7 @@ function App() {
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {
-                console.log("Document data:", docSnap.data());
+                // console.log("Document data:", docSnap.data());
                 setPlanList(Object.values(docSnap.data()));
 
             } else {
