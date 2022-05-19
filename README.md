@@ -3,7 +3,7 @@ This app will help you make individual nutritional plans. <br>
 Healthy body === healthy mind :-)
 
 
- Technologies used: <br>
+ ### Technologies used: <br>
 - HTML
 - Scss
 - JavaScript + React
