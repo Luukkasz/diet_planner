@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './SingleProduct.scss';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import Paper from '@mui/material/Paper';
-import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
 
 function SingleProduct({product, setSinglePlan, productList, setProductList, hide}) {
@@ -84,23 +83,26 @@ function SingleProduct({product, setSinglePlan, productList, setProductList, hid
                             <option value="dinner">Dinner</option>
                             <option value="snack">Snack</option>
                         </select>
-
                     </div>
 
-                    {/*<button>Add to plan</button>*/}
 
-                    <Button
-                        variant="outlined"
-                        size="small"
-                        sx={{
-                            paddingTop: 0,
-                            paddingBottom: 0,
-                            letterSpacing: 0,
-                            color: 'cornflowerblue',
-                            textTransform: 'none',
-                        }}>
-                        Add to plan
-                    </Button>
+                    <div className="testButton">
+                        <Button
+                            type="submit"
+                            variant="outlined"
+                            size="small"
+                            sx={{
+                                paddingTop: 0,
+                                paddingBottom: 0,
+                                letterSpacing: 0,
+                                color: 'cornflowerblue',
+                                textTransform: 'none',
+                                textAlign: 'right',
+                            }}>
+                            Add to plan
+                        </Button>
+                    </div>
+
 
                 </form>}
         </Paper>

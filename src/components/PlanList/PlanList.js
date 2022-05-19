@@ -38,7 +38,7 @@ function PlanList({planList, setPlanList, setPlanToShow}) {
     }
 
     return (
-        <div className="productList__wrapper">
+        <div className="planList__wrapper">
             <h2 className="productList__title">Plan list</h2>
             <div className="productList__input-wrapper">
                 <div className="productList__input-wrapper">

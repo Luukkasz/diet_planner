@@ -1,5 +1,8 @@
 import React from "react";
 import './NewProductForm.scss';
+import Input from '@mui/material/Input';
+import Button from "@mui/material/Button";
+const ariaLabel = { 'aria-label': 'description' };
 
 
 function NewProductForm({newProduct, setNewProduct, setProductList, initialNewProduct}) {
@@ -16,6 +19,8 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
 
     const handleAddProduct = (e) => {
         e.preventDefault();
+        if(!isNaN(newProduct.name)) return;
+
         setProductList(prevState => {
 
             return [
@@ -47,57 +52,111 @@ function NewProductForm({newProduct, setNewProduct, setProductList, initialNewPr
             <form className="newProduct__form" onSubmit={handleAddProduct}>
                 <div className="newProduct__input-wrapper">
                     <label htmlFor="name">Product name: </label>
-                    <input
+                    {/*<input*/}
+                    {/*    type="text"*/}
+                    {/*    name="name"*/}
+                    {/*    id="name"*/}
+                    {/*    value={newProduct.name}*/}
+                    {/*    onChange={handleChange}*/}
+                    {/*    required/>*/}
+
+                    <Input
                         type="text"
                         name="name"
                         id="name"
                         value={newProduct.name}
                         onChange={handleChange}
-                        required/>
+                        required
+                        inputProps={ariaLabel}
+                    />
 
                 </div>
 
                 <div className="newProduct__input-wrapper">
                     <label htmlFor="proteins">Proteins in 100g: </label>
-                    <input
+                    {/*<input*/}
+                    {/*    type="number"*/}
+                    {/*    name="proteins"*/}
+                    {/*    id="proteins"*/}
+                    {/*    value={newProduct.proteins}*/}
+                    {/*    onChange={handleChange}*/}
+                    {/*    required/>*/}
+
+                    <Input
                         type="number"
                         name="proteins"
                         id="proteins"
                         value={newProduct.proteins}
                         onChange={handleChange}
-                        required/>
+                        required
+                        inputProps={ariaLabel}
+                    />
 
                 </div>
 
                 <div className="newProduct__input-wrapper">
                     <label htmlFor="name">Carbs in 100g: </label>
-                    <input
+                    {/*<input*/}
+                    {/*    type="number"*/}
+                    {/*    name="carbs"*/}
+                    {/*    id="carbs"*/}
+                    {/*    value={newProduct.carbs}*/}
+                    {/*    onChange={handleChange}*/}
+                    {/*    required/>*/}
+
+                    <Input
                         type="number"
                         name="carbs"
                         id="carbs"
                         value={newProduct.carbs}
                         onChange={handleChange}
-                        required/>
+                        required
+                        inputProps={ariaLabel}
+                    />
 
                 </div>
 
                 <div className="newProduct__input-wrapper">
                     <label htmlFor="fats">Fats in 100g: </label>
-                    <input
+                    {/*<input*/}
+                    {/*    type="number"*/}
+                    {/*    name="fats"*/}
+                    {/*    id="fats"*/}
+                    {/*    value={newProduct.fats}*/}
+                    {/*    onChange={handleChange}*/}
+                    {/*    required/>*/}
+
+                    <Input
                         type="number"
                         name="fats"
                         id="fats"
                         value={newProduct.fats}
                         onChange={handleChange}
-                        required/>
+                        required
+                        inputProps={ariaLabel}
+                    />
 
                 </div>
 
                 <p className="newProduct__kcal">
-                    Kcals in 100g: {kcalCounter(newProduct)}
+                    Kcals in 100g: <strong>{kcalCounter(newProduct)}</strong>
                 </p>
 
-                <button>Add to list</button>
+
+                <div className="newProductForm__button-wrapper">
+                    <Button
+                        type="submit"
+                        variant="outlined"
+                        size="small"
+                        sx={{
+                            color: 'cornflowerblue',
+                            textTransform: 'none',
+                        }}>
+                        Add to list
+                    </Button>
+                </div>
+
+
             </form>
         </div>
     );

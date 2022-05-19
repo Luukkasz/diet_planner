@@ -1,4 +1,4 @@
-.productList__item{
+.productList__item {
   border: 1px solid black;
   margin: 10px 0;
   padding: 10px;
@@ -10,13 +10,56 @@
 }
 
 .singleProduct__form {
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
 
-  button {
+  input {
+    padding: 3px 5px;
+    margin-right: 10px;
+    width: 40%;
+    min-width: 130px;
+
+    box-shadow: 0 5px 15px -10px rgb(0 0 0 / 30%);
+    background-color: #fbfbfb;
+    border: none;
+    border-radius: 5px;
+
+    &::placeholder {
+      //color: rgb(25, 118, 210);
+      color: #374b52;
+    }
+
+    @media(max-width: 456px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  select {
+    padding: 3px 5px;
+
+    box-shadow: 0 5px 15px -10px rgb(0 0 0 / 30%);
+    background-color: #fbfbfb;
+    border: none;
+    border-radius: 5px;
+    //color: rgb(25, 118, 210);
+    color: #374b52;
+
+  }
+}
+
+
+.testButton {
+  display: inline-block;
+
+  @media(max-width: 610px) {
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
 
   }
 }

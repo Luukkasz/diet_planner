@@ -40,7 +40,7 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
 
 
     return (
-        <div className="productList__wrapper">
+        <div className="addSinglePlan__wrapper">
             <h2 className="addSinglePlan__title">Add plan</h2>
                 <div className="addSinglePlan__form-wrapper">
 
@@ -68,14 +68,14 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
 
                 </div>
 
-            <div className="productList__meal">
+            <div className="addSinglePlan__meal">
                 <span className="addSinglePlan__infoSpan"><strong>Kcals:</strong> {singlePlan.reduce((acc, el) => acc + Number(el.kcals), 0)} </span>
                 <span className="addSinglePlan__infoSpan"><strong>Proteins:</strong> {singlePlan.reduce((acc, el) => acc + Number(el.proteins), 0)} </span>
                 <span className="addSinglePlan__infoSpan"><strong>Carbs:</strong> {singlePlan.reduce((acc, el) => acc + Number(el.carbs), 0)} </span>
                 <span className="addSinglePlan__infoSpan"><strong>Fats:</strong> {singlePlan.reduce((acc, el) => acc + Number(el.fats), 0)} </span>
             </div>
 
-            <div className="productList__meal">
+            <div className="addSinglePlan__meal">
                 <h3>Breakfast</h3>
                 <ul>
                     {singlePlan
@@ -97,7 +97,7 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                 </ul>
             </div>
 
-            <div className="productList__meal">
+            <div className="addSinglePlan__meal">
                 <h3>Lunch</h3>
                 <ul>
                     {singlePlan
@@ -119,7 +119,7 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                 </ul>
             </div>
 
-            <div className="productList__meal">
+            <div className="addSinglePlan__meal">
                 <h3>Dinner</h3>
                 <ul>
                     {singlePlan
@@ -141,7 +141,7 @@ function AddSinglePlan({singlePlan, setSinglePlan, setPlanList}) {
                 </ul>
             </div>
 
-            <div className="productList__meal">
+            <div className="addSinglePlan__meal">
                 <h3>Snacks</h3>
                 <ul>
                     {singlePlan

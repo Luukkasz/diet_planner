@@ -7,29 +7,31 @@ function SinglePlan({planList, planToShow}) {
     const filteredPlanToShow = [...planToShow].filter(el => !el.planName);
 
     if (planToShow.length === 0 || !planList.includes(planToShow)) return (
-        <div className="productList__wrapper">
+        <div className="singlePlan__wrapper">
             <h2 className="productList__title">
                 Plan to show
             </h2>
+
+            <p className="singlePlan__tip">Choose your plan from list</p>
         </div>
     )
 
     return (
-        <div className="productList__wrapper">
+        <div className="singlePlan__wrapper">
             <h2 className="productList__title">
                 {planToShow
                     .filter(el => el.planName)
                     .map(el => el.planName)}
             </h2>
 
-            <div className="productList__meal">
+            <div className="singlePlan__meal">
                 <span className="addSinglePlan__infoSpan"><strong>Kcals:</strong>  {filteredPlanToShow.reduce((acc, el) => acc + Number(el.kcals), 0)} </span>
                 <span className="addSinglePlan__infoSpan"><strong>Proteins:</strong> {filteredPlanToShow.reduce((acc, el) => acc + Number(el.proteins), 0)} </span>
                 <span className="addSinglePlan__infoSpan"><strong>Carbs:</strong> {filteredPlanToShow.reduce((acc, el) => acc + Number(el.carbs), 0)} </span>
                 <span className="addSinglePlan__infoSpan"><strong>Fats:</strong> {filteredPlanToShow.reduce((acc, el) => acc + Number(el.fats), 0)} </span>
             </div>
 
-            <div className="productList__meal">
+            <div className="singlePlan__meal">
                 <h3>Breakfast</h3>
                 <ul>
                     {filteredPlanToShow
@@ -44,7 +46,7 @@ function SinglePlan({planList, planToShow}) {
                 </ul>
             </div>
 
-            <div className="productList__meal">
+            <div className="singlePlan__meal">
                 <h3>Lunch</h3>
                 <ul>
                     {filteredPlanToShow
@@ -59,7 +61,7 @@ function SinglePlan({planList, planToShow}) {
                 </ul>
             </div>
 
-            <div className="productList__meal">
+            <div className="singlePlan__meal">
                 <h3>Dinner</h3>
                 <ul>
                     {filteredPlanToShow
@@ -74,7 +76,7 @@ function SinglePlan({planList, planToShow}) {
                 </ul>
             </div>
 
-            <div className="productList__meal">
+            <div className="singlePlan__meal">
                 <h3>Snacks</h3>
                 <ul>
                     {filteredPlanToShow

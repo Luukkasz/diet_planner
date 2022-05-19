@@ -1,0 +1,27 @@
+.singlePlan__wrapper {
+  height: 70vh;
+  width: 100%;
+  max-width: 550px;
+  margin: 25px;
+  padding: 40px;
+  border: 1px solid lightgray;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px -10px rgb(0 0 0 / 30%);
+  background-color: #fbfbfb;
+  overflow: auto;
+
+  @media(max-width: 900px) {
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+  }
+}
+
+.singlePlan__tip{
+  margin-top: 50px;
+  text-align: center;
+}
+
+.singlePlan__meal{
+  margin: 40px 0;
+}
